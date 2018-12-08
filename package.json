@@ -1,0 +1,40 @@
+{
+  "name": "calendar_service",
+  "version": "0.0.1",
+  "description": "Calendar Service to manage Meetings and Appointments",
+  "main": "index.js",
+  "dependencies": {
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "gts": "^0.9.0",
+    "typescript": "~3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "tsc -p .",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openschoolmanagement/calendar_service.git"
+  },
+  "keywords": [
+    "OSM",
+    "Calendar",
+    "Meetings",
+    "Appointments"
+  ],
+  "author": "Philipp Kostyra for OSM",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/openschoolmanagement/calendar_service/issues"
+  },
+  "homepage": "https://github.com/openschoolmanagement/calendar_service#readme"
+}
