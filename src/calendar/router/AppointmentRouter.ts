@@ -2,7 +2,7 @@ import { Request, Response, Application } from "express";
 import { CalendarServiceMainRouter } from "./CalendarServiceMainRouter";
 
 export class AppointmentRouter {
-  private appointmentPath = CalendarServiceMainRouter.apiBase + "appointemnt/";
+  private appointmentPath = CalendarServiceMainRouter.apiBase + "appointement/";
 
   constructor() {}
 
