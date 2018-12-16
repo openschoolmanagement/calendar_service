@@ -1,5 +1,5 @@
 class Appointment {
-  appointment_id: number;
+  appointmentid: number;
   start: Date;
   end: Date;
   duration: number;
@@ -17,7 +17,7 @@ class Appointment {
     location: string,
     owner: Person
   ) {
-    this.appointment_id = appointmentid;
+    this.appointmentid = appointmentid;
     this.start = start;
     this.end = end;
     this.duration = end.getMilliseconds() - start.getMilliseconds();

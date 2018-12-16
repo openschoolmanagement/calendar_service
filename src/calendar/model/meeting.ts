@@ -1,5 +1,5 @@
 class Meeting {
-  meeting_id: number;
+  meetingid: number;
   start: Date;
   end: Date;
   duration: number;
@@ -10,7 +10,7 @@ class Meeting {
   invited: Person[];
 
   constructor(
-    appointmentid: number,
+    meetingid: number,
     start: Date,
     end: Date,
     subject: string,
@@ -19,7 +19,7 @@ class Meeting {
     owner: Person,
     invited: Person[]
   ) {
-    this.meeting_id = appointmentid;
+    this.meetingid = meetingid;
     this.start = start;
     this.end = end;
     this.duration = end.getMilliseconds() - start.getMilliseconds();
