@@ -1,8 +1,9 @@
-import { Request, Response, Application } from "express";
-import { AppointmentRouter } from "./AppointmentRouter";
+import {Application, Request, Response} from 'express';
+
+import {AppointmentRouter} from './AppointmentRouter';
 
 export class CalendarServiceMainRouter {
-  static apiBase = "/api/";
+  static apiBase = '/api/';
 
   appointmentRouter: AppointmentRouter;
 
@@ -11,10 +12,8 @@ export class CalendarServiceMainRouter {
   }
 
   routes(app: Application): void {
-    app.route("/").get((req: Request, res: Response) => {
-      res.status(200).send({
-        message: "GET request successfulll!!!!"
-      });
+    app.route('/').get((req: Request, res: Response) => {
+      res.status(200).send({message: 'GET request successfulll!!!!'});
     });
 
     this.appointmentRouter.routes(app);

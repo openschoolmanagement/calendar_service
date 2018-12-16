@@ -1,9 +1,9 @@
-import * as express from "express";
-import * as path from "path";
+import * as bodyParser from 'body-parser';
+import * as express from 'express';
+import * as path from 'path';
 
-import * as bodyParser from "body-parser";
-import { CalendarServiceMainRouter } from "./calendar/router/CalendarServiceMainRouter";
-import { AppointmentRouter } from "./calendar/router/AppointmentRouter";
+import {AppointmentRouter} from './calendar/router/AppointmentRouter';
+import {CalendarServiceMainRouter} from './calendar/router/CalendarServiceMainRouter';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -11,7 +11,7 @@ class App {
   app: express.Application;
   routeProvider!: CalendarServiceMainRouter;
 
-  //Run configuration methods on the Express instance.
+  // Run configuration methods on the Express instance.
   constructor() {
     this.app = express();
     this.middleware();
@@ -21,7 +21,7 @@ class App {
   // Configure Express middleware.
   private middleware(): void {
     this.app.use(bodyParser.json());
-    this.app.use(bodyParser.urlencoded({ extended: false }));
+    this.app.use(bodyParser.urlencoded({extended: false}));
   }
 
   // Configure API endpoints.

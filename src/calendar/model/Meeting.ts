@@ -10,15 +10,8 @@ class Meeting {
   invited: Person[];
 
   constructor(
-    meetingid: number,
-    start: Date,
-    end: Date,
-    subject: string,
-    description: string,
-    location: string,
-    owner: Person,
-    invited: Person[]
-  ) {
+      meetingid: number, start: Date, end: Date, subject: string,
+      description: string, location: string, owner: Person, invited: Person[]) {
     this.meetingid = meetingid;
     this.start = start;
     this.end = end;

@@ -9,14 +9,8 @@ class Appointment {
   owner: Person;
 
   constructor(
-    appointmentid: number,
-    start: Date,
-    end: Date,
-    subject: string,
-    description: string,
-    location: string,
-    owner: Person
-  ) {
+      appointmentid: number, start: Date, end: Date, subject: string,
+      description: string, location: string, owner: Person) {
     this.appointmentid = appointmentid;
     this.start = start;
     this.end = end;
