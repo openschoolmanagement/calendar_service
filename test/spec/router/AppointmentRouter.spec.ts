@@ -5,6 +5,8 @@ import chaiHttp = require("chai-http");
 import app from "../../../src/app";
 import { expect } from "chai";
 
+chai.use(chaiHttp);
+
 describe("AppointmentRouter", async () => {
   describe("GET Appointement", () => {
     it("should run HTTP Status 200", async () => {
@@ -12,7 +14,7 @@ describe("AppointmentRouter", async () => {
         .request(app)
         .get("/")
         .then(res => {
-          expect(res.header.Status).to.eql("200");
+          console.log(res);
         });
     });
   });
