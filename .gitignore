@@ -65,3 +65,6 @@ typings/
 
 #Typescript Build Folder
 dist
+
+#Ignore Package-lock.json
+package-lock.json
