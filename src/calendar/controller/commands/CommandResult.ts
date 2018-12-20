@@ -1,5 +1,5 @@
 export interface CommandResult {
-  requestid: BigInteger;
+  commandId: BigInteger;
   method: string;
   httpStatus: string;
   path: string;

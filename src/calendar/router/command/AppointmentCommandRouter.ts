@@ -1,6 +1,6 @@
 import { Application, Request, Response, Router } from "express";
 
-export class AppointmentEventRouter {
+export class AppointmentCommandRouter {
   appointmentEventPath = "/events/appointements";
   app: Application;
   constructor(app: Application) {
