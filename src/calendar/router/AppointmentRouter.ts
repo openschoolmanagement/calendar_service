@@ -3,48 +3,34 @@ import { Application, Request, Response, Router } from "express";
 import { CalendarServiceMainRouter } from "./CalendarServiceMainRouter";
 
 export class AppointmentRouter {
-  private appointmentPath = CalendarServiceMainRouter.apiBase + "appointments";
-  private appointmentRouter: Router;
+  private appointmentPath = CalendarServiceMainRouter.apiBase + "/appointments";
+  private router: Router;
   constructor() {
-    this.appointmentRouter = Router();
+    this.router = Router();
   }
 
   routes(app: Application): void {
-    app.use(this.appointmentRouter);
+    app.use(this.router);
 
-    this.appointmentRouter.get(
-      this.appointmentPath,
-      (req: Request, res: Response) => {
-        res.status(200).send({ message: "GET request successfulll!!!!" });
-      }
-    );
+    this.router.get(this.appointmentPath, (req: Request, res: Response) => {
+      console.log(this.appointmentPath);
+      res.status(200).send({ message: "GET request successfulll!!!!" });
+    });
 
-    this.appointmentRouter.post(
-      this.appointmentPath,
-      (req: Request, res: Response) => {
-        res.status(200).send({ message: "POST request successfulll!!!!" });
-      }
-    );
+    this.router.post(this.appointmentPath, (req: Request, res: Response) => {
+      res.status(200).send({ message: "POST request successfulll!!!!" });
+    });
 
-    this.appointmentRouter.put(
-      this.appointmentPath,
-      (req: Request, res: Response) => {
-        res.status(200).send({ message: "PUT request successfulll!!!!" });
-      }
-    );
+    this.router.put(this.appointmentPath, (req: Request, res: Response) => {
+      res.status(200).send({ message: "PUT request successfulll!!!!" });
+    });
 
-    this.appointmentRouter.delete(
-      this.appointmentPath,
-      (req: Request, res: Response) => {
-        res.status(200).send({ message: "DELETE request successfulll!!!!" });
-      }
-    );
+    this.router.delete(this.appointmentPath, (req: Request, res: Response) => {
+      res.status(200).send({ message: "DELETE request successfulll!!!!" });
+    });
 
-    this.appointmentRouter.patch(
-      this.appointmentPath,
-      (req: Request, res: Response) => {
-        res.status(200).send({ message: "PATCH request successfulll!!!!" });
-      }
-    );
+    this.router.patch(this.appointmentPath, (req: Request, res: Response) => {
+      res.status(200).send({ message: "PATCH request successfulll!!!!" });
+    });
   }
 }

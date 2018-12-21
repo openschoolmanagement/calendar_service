@@ -1,14 +1,20 @@
 import { Application, Request, Response } from "express";
 
 import { AppointmentRouter } from "./AppointmentRouter";
+import { AppointmentCommandRouter } from "./command/AppointmentCommandRouter";
 
 export class CalendarServiceMainRouter {
-  static apiBase = "/api/";
+  static apiBase = "/api";
 
   appointmentRouter: AppointmentRouter;
+  appointmentCommandRouter: AppointmentCommandRouter;
 
-  constructor(appointmentRouter: AppointmentRouter) {
+  constructor(
+    appointmentRouter: AppointmentRouter,
+    appointmentCommandRouter: AppointmentCommandRouter
+  ) {
     this.appointmentRouter = appointmentRouter;
+    this.appointmentCommandRouter = appointmentCommandRouter;
   }
 
   routes(app: Application): void {
@@ -17,5 +23,6 @@ export class CalendarServiceMainRouter {
     });
 
     this.appointmentRouter.routes(app);
+    this.appointmentCommandRouter.routes(app);
   }
 }
