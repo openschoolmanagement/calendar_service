@@ -1,5 +1,7 @@
 import { Application, Request, Response, Router } from "express";
 import { CalendarServiceMainRouter } from "../CalendarServiceMainRouter";
+import { AppointmentRouter } from "../AppointmentRouter";
+import { BatchRequestDispatcher } from "../../controller/batch/BatchRequestDispatcher";
 
 export class AppointmentCommandRouter {
   appointmentEventPath =
@@ -15,7 +17,8 @@ export class AppointmentCommandRouter {
     this.router.put(
       this.appointmentEventPath,
       (req: Request, res: Response) => {
-        res.status(200).send({ message: "PUT request successfulll!!!!" });
+        const batchRequestDispatcher = new BatchRequestDispatcher();
+        batchRequestDispatcher.handlePutRequest(req);
       }
     );
   }
