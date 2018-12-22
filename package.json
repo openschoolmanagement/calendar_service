@@ -26,7 +26,7 @@
     "check": "gts check",
     "clean": "gts clean",
     "compile": "tsc -p .",
-    "compile-watch": "tsc --watch -p .",
+    "compile-watch": "tsc --watch -p . && ./node_modules/.bin/mocha --compilers ts:ts-node/register ./test/**/*.spec.ts -R min -u tdd",
     "fix": "gts fix",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
